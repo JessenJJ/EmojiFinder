@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct ContentView: View {
-    var emojis: [Emoji] = EmojiProvider.allEmojis()
+    @State private var emojis: [Emoji] = EmojiProvider.allEmojis()
     @State private var searchText: String = ""
+    @State private var isRedacted: Bool = true
+    
+    
     
     var emojiSearchResult: [Emoji] {
         guard !searchText.isEmpty else {
@@ -25,10 +28,36 @@ struct ContentView: View {
     var body: some View {
         NavigationStack{
             List(emojiSearchResult){ emoji in
-                EmojiRow(emoji: emoji)
+                NavigationLink {
+                    EmojiDetail(emoji: emoji)
+                } label: {
+                    if isRedacted {
+                        EmojiRow(emoji: emoji)
+                            .redacted(reason: .placeholder)
+                    } else {
+                        EmojiRow(emoji: emoji)
+                    }
+                }
+
+
+                
+                    //EmojiRow(emoji: emoji)
                     //.listRowSeparator(.hidden)
             }
             .navigationTitle("Emoji")
+            .refreshable {
+                let newRow = EmojiProvider.allEmojis()
+                    .randomElement()
+                emojis.insert(newRow! ,at:0)
+            }
+            .onAppear{
+                //melakukan pararel proses agar ui tetap berjalan saat
+                //suatu proses belum selesai
+                DispatchQueue.main
+                    .asyncAfter(deadline: .now() + 2){
+                        isRedacted = false
+                    }
+            }
             .searchable(text: $searchText,placement: .navigationBarDrawer(displayMode:.always),
             prompt: "What emoji's that you're looking for?"
             )
