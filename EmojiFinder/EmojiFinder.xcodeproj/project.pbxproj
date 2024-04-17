@@ -12,6 +12,9 @@
 		5BE5418F2BCF62E500E3BE35 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BE5418E2BCF62E500E3BE35 /* Assets.xcassets */; };
 		5BE541922BCF62E500E3BE35 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BE541912BCF62E500E3BE35 /* Preview Assets.xcassets */; };
 		5BE5419D2BCF63D800E3BE35 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 5BE5419C2BCF63D800E3BE35 /* .gitignore */; };
+		5BE5419F2BCF6F9700E3BE35 /* Emoji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE5419E2BCF6F9700E3BE35 /* Emoji.swift */; };
+		5BE541A22BCF72A600E3BE35 /* EmojiRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE541A12BCF72A600E3BE35 /* EmojiRow.swift */; };
+		5BE541A62BCF75D900E3BE35 /* RandomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BE541A52BCF75D900E3BE35 /* RandomColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +24,9 @@
 		5BE5418E2BCF62E500E3BE35 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5BE541912BCF62E500E3BE35 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5BE5419C2BCF63D800E3BE35 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		5BE5419E2BCF6F9700E3BE35 /* Emoji.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Emoji.swift; sourceTree = "<group>"; };
+		5BE541A12BCF72A600E3BE35 /* EmojiRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiRow.swift; sourceTree = "<group>"; };
+		5BE541A52BCF75D900E3BE35 /* RandomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +60,7 @@
 		5BE541892BCF62E100E3BE35 /* EmojiFinder */ = {
 			isa = PBXGroup;
 			children = (
+				5BE541A42BCF75BF00E3BE35 /* Utility */,
 				5BE541992BCF632700E3BE35 /* Resources */,
 				5BE5419B2BCF637500E3BE35 /* Model */,
 				5BE541982BCF631F00E3BE35 /* App */,
@@ -90,6 +97,7 @@
 		5BE5419A2BCF634100E3BE35 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5BE541A02BCF729800E3BE35 /* Component */,
 				5BE5418C2BCF62E100E3BE35 /* ContentView.swift */,
 			);
 			path = View;
@@ -98,8 +106,25 @@
 		5BE5419B2BCF637500E3BE35 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5BE5419E2BCF6F9700E3BE35 /* Emoji.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		5BE541A02BCF729800E3BE35 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				5BE541A12BCF72A600E3BE35 /* EmojiRow.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		5BE541A42BCF75BF00E3BE35 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				5BE541A52BCF75D900E3BE35 /* RandomColor.swift */,
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -173,6 +198,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5BE5419F2BCF6F9700E3BE35 /* Emoji.swift in Sources */,
+				5BE541A62BCF75D900E3BE35 /* RandomColor.swift in Sources */,
+				5BE541A22BCF72A600E3BE35 /* EmojiRow.swift in Sources */,
 				5BE5418D2BCF62E100E3BE35 /* ContentView.swift in Sources */,
 				5BE5418B2BCF62E100E3BE35 /* EmojiFinderApp.swift in Sources */,
 			);
@@ -322,6 +350,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.iswift.EmojiFinder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -350,6 +381,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.iswift.EmojiFinder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
