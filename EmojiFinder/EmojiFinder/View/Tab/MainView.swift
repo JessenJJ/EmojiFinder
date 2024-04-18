@@ -2,14 +2,22 @@
 //  MainView.swift
 //  EmojiFinder
 //
-//  Created by User50 on 18/04/24.
+//  Created by Jessen Jie on 18/04/24.
 //
 
 import SwiftUI
 
 struct MainView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        TabView{
+            ContentView()
+                .tabItem { Label("Emoji",systemImage: "ev.plug.dc.nacs") }
+            Text("Map View")
+                .tabItem {Label( "Location", systemImage:"binoculars")}
+                .badge(4)
+            Text("Settings Page")
+                .tabItem { Label("Settings",systemImage: "gear") }
+        }
     }
 }
 

@@ -46,9 +46,15 @@ struct ContentView: View {
             }
             .navigationTitle("Emoji")
             .refreshable {
+                isRedacted = true
                 let newRow = EmojiProvider.allEmojis()
                     .randomElement()
                 emojis.insert(newRow! ,at:0)
+                
+                DispatchQueue.main.asyncAfter(deadline: .now()+2)
+                {
+                    isRedacted = false
+                }
             }
             .onAppear{
                 //melakukan pararel proses agar ui tetap berjalan saat
